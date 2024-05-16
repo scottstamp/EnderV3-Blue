@@ -41,6 +41,10 @@ trusted_clients =
 
 [history]
 
+[spoolman]
+server = http://192.168.2.99:7912
+sync_rate = 5
+
 [update_manager]
 enable_auto_refresh = True
 refresh_interval = 24
@@ -53,6 +57,15 @@ path = /usr/data/helper-script
 origin = https://github.com/Guilouz/Creality-Helper-Script.git
 primary_branch = main
 managed_services = klipper
+
+[webcam Camera]
+location = printer
+enabled = True
+service = webrtc-go2rtc
+target_fps = 30
+target_fps_idle = 5
+stream_url = http://192.168.2.31:1984/webrtc.html?src=camera1&media=video+audio
+snapshot_url = http://192.168.2.31:1984/api/frame.jpeg?src=camera1
 
 [timelapse]
 output_path = /usr/data/printer_data/timelapse/
